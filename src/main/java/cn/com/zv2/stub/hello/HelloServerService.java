@@ -1,10 +1,14 @@
 
 package cn.com.zv2.stub.hello;
 
-import javax.xml.namespace.QName;
-import javax.xml.ws.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import javax.xml.namespace.QName;
+import javax.xml.ws.Service;
+import javax.xml.ws.WebEndpoint;
+import javax.xml.ws.WebServiceClient;
+import javax.xml.ws.WebServiceException;
+import javax.xml.ws.WebServiceFeature;
 
 
 /**
@@ -13,7 +17,7 @@ import java.net.URL;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "HelloServerService", targetNamespace = "http://server.zv2.com.cn/", wsdlLocation = "http://127.0.0.1/hello?wsdl")
+@WebServiceClient(name = "HelloServerService", targetNamespace = "http://server.zv2.com.cn/", wsdlLocation = "http://127.0.0.1:80/hello?wsdl")
 public class HelloServerService
     extends Service
 {
@@ -26,7 +30,7 @@ public class HelloServerService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://127.0.0.1/hello?wsdl");
+            url = new URL("http://127.0.0.1:80/hello?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
